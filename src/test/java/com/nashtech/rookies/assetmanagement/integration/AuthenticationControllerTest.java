@@ -2,9 +2,6 @@ package com.nashtech.rookies.assetmanagement.integration;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.nashtech.rookies.assetmanagement.dto.request.AuthenticationRequest;
-import com.nashtech.rookies.assetmanagement.dto.response.LoginResponse;
-import com.nashtech.rookies.assetmanagement.dto.response.ResponseDto;
-import com.nashtech.rookies.assetmanagement.service.AuthenticationService;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,9 +13,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -39,8 +33,8 @@ class AuthenticationControllerTest {
     @BeforeEach
     void setUp() {
         validRequest = AuthenticationRequest.builder()
-                .username("nguyenp")
-                .password("Nguyen@123")
+                .username("nhatt")
+                .password("Nhat@123")
                 .build();
 
         invalidRequest = AuthenticationRequest.builder()
@@ -51,7 +45,6 @@ class AuthenticationControllerTest {
 
     @Test
     public void testSignIn_whenValidRequest_thenSuccess() throws Exception {
-
         mockMvc.perform(MockMvcRequestBuilders
                         .post("/api/v1/auth/signIn")
                         .contentType(MediaType.APPLICATION_JSON)
