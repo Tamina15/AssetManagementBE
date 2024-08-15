@@ -36,6 +36,9 @@
                 <exec.mainClass>com.nashtech.rookies.assetmanagement.AssetmanagementApplication</exec.mainClass>
                 <exec.executable>java</exec.executable>
                 <jpda.listen>true</jpda.listen>
+                <Env.DB_URL>jdbc:postgresql://ep-withered-haze-a1who74s.ap-southeast-1.aws.neon.tech/rookies</Env.DB_URL>
+                <Env.DB_USERNAME>rookies_owner</Env.DB_USERNAME>
+                <Env.DB_PASSWORD>sG93hrJCAnzN</Env.DB_PASSWORD>
             </properties>
         </action>
         <action>
@@ -70,6 +73,21 @@
                 <exec.executable>java</exec.executable>
                 <exec.mainClass>${packageClassName}</exec.mainClass>
                 <exec.classpathScope>${classPathScope}</exec.classpathScope>
+                <Env.DB_URL>jdbc:postgresql://ep-withered-haze-a1who74s.ap-southeast-1.aws.neon.tech/rookies</Env.DB_URL>
+                <Env.DB_USERNAME>rookies_owner</Env.DB_USERNAME>
+                <Env.DB_PASSWORD>sG93hrJCAnzN</Env.DB_PASSWORD>
+            </properties>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
                 <Env.DB_URL>jdbc:postgresql://ep-withered-haze-a1who74s.ap-southeast-1.aws.neon.tech/rookies</Env.DB_URL>
                 <Env.DB_USERNAME>rookies_owner</Env.DB_USERNAME>
                 <Env.DB_PASSWORD>sG93hrJCAnzN</Env.DB_PASSWORD>
